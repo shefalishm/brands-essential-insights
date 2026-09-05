@@ -10,7 +10,6 @@ export function ArticleCard({ article, featured = false }: { article: Article; f
           <Image src={article.image} alt="" fill sizes={featured ? "(max-width: 900px) 100vw, 55vw" : "(max-width: 580px) 100vw, (max-width: 900px) 50vw, 33vw"} className="card-art-image" />
           <span className="card-art-shade" />
           <span>{article.section}</span>
-          <b>{String(article.title.split(" ").length).padStart(2, "0")}</b>
         </div>
         <div className="card-copy">
           <div className="meta"><span>{article.section}</span><span>{article.readingTime}</span></div>
