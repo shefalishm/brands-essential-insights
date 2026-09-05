@@ -21,10 +21,10 @@ export function Header() {
       <div className="insights-nav-wrap">
         <nav className="shell insights-nav" aria-label="Insights categories">
           <span>Explore insights</span>
-          <Link href="/blogs">Blogs</Link>
-          <Link href="/guides">Guides</Link>
-          <Link href="/case-studies">Case Studies</Link>
-          <Link href="/resources">Resources</Link>
+          <Link href="/website-development">Website Development</Link>
+          <Link href="/seo-aeo">SEO &amp; AEO</Link>
+          <Link href="/content-social-media">Content &amp; Social Media</Link>
+          <Link href="/marketing-strategy">Marketing Strategy</Link>
         </nav>
       </div>
     </header>

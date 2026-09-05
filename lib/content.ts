@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { cache } from "react";
 import type { Section } from "@/lib/site";
+import { getEditorialExpansion } from "@/lib/editorial-depth";
 
 export type Article = {
   slug: string;
@@ -28,7 +29,10 @@ export const getAllArticles = cache((): Article[] => {
     .map((file) => {
       const slug = file.replace(/\.mdx?$/, "");
       const { data, content } = matter(fs.readFileSync(path.join(contentDirectory, file), "utf8"));
-      return { slug, ...data, body: content } as Article;
+      const article = { slug, ...data, body: content } as Article;
+      const totalWords = `${content} ${getEditorialExpansion(article)}`.trim().split(/\s+/).length;
+      article.readingTime = `${Math.max(1, Math.ceil(totalWords / 210))} min read`;
+      return article;
     })
     .sort((a, b) => +new Date(b.date) - +new Date(a.date));
 });

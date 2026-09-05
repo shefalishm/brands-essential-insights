@@ -19,34 +19,35 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <section className="hero">
+      <section className="hero home-panel">
         <div className="shell hero-grid">
           <div>
-            <p className="kicker">Ideas for brands built to grow</p>
-            <h1>Clarity for the <span>new age</span> of marketing.</h1>
+            <p className="kicker">Websites and marketing built to perform</p>
+            <h1>Strategy that turns <span>attention</span> into growth.</h1>
           </div>
           <div className="hero-side">
-            <p>Clear thinking on brand, content, AI, and growth—made practical for founders and lean teams.</p>
+            <p>In-depth guidance on website development, SEO, AEO, content and marketing, made practical for ambitious businesses.</p>
             <a className="button" href="#latest">Explore the latest <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <div className="ticker" aria-hidden="true"><span>BRAND STRATEGY · AI & MARKETING · CONTENT SYSTEMS · SMARTER GROWTH ·</span></div>
+        <div className="ticker" aria-label="Our areas of expertise"><span>Website Development</span><span>SEO &amp; AEO</span><span>Content &amp; Social</span><span>Marketing Strategy</span></div>
       </section>
 
-      {featured && <section className="shell featured-section"><p className="section-label">Featured perspective</p><ArticleCard article={featured} featured /></section>}
+      {featured && <section className="shell featured-section home-panel"><div className="panel-inner"><p className="section-label">Featured perspective</p><ArticleCard article={featured} featured /></div></section>}
 
-      <section className="section-nav shell" aria-labelledby="explore-heading">
-        <div><p className="section-label">Explore</p><h2 id="explore-heading">Find the clarity you need.</h2></div>
-        <div className="section-links">{sections.map((section, index) => <Link href={`/${sectionSlug(section)}`} key={section}><span>0{index + 1}</span>{section}<b>↗</b></Link>)}</div>
+      <section className="section-nav shell home-panel" aria-labelledby="explore-heading">
+        <div><p className="section-label">Explore by expertise</p><h2 id="explore-heading">Find the answer your growth needs.</h2></div>
+        <div className="section-links">{sections.map((section) => <Link href={`/${sectionSlug(section)}`} key={section}>{section}<b>↗</b></Link>)}</div>
       </section>
 
-      <section id="latest" className="latest-section">
+      <section id="latest" className="latest-section home-panel">
         <div className="shell"><div className="section-heading"><div><p className="section-label">Fresh thinking</p><h2>Latest insights</h2></div><p>Useful, direct, and designed to help you make the next marketing decision with confidence.</p></div>
           <div className="card-grid">{remaining.map((article) => <ArticleCard article={article} key={article.slug} />)}</div>
         </div>
       </section>
 
-      <section className="shell manifesto"><p className="kicker">Our point of view</p><blockquote>Marketing should feel <em>clearer</em>, not more complicated.</blockquote><p>We turn experience and emerging technology into practical systems that teams can actually use.</p></section>
+      <section className="shell manifesto home-panel"><div><p className="kicker">Our point of view</p><blockquote>Marketing should feel <em>clearer</em>, not more complicated.</blockquote><p>We turn experience and emerging technology into practical systems that teams can actually use.</p></div></section>
+      <section className="contact-panel home-panel"><div className="shell contact-panel-inner"><p className="section-label">Ready to grow?</p><h2>Build a website and marketing system that earns attention, trust and enquiries.</h2><a className="button button-light" href={`${site.wixUrl}/contact`}>Contact us <span aria-hidden="true">↗</span></a></div></section>
     </>
   );
 }

@@ -5,17 +5,17 @@ import { getArticlesBySection } from "@/lib/content";
 import { sections, sectionSlug, type Section } from "@/lib/site";
 
 const descriptions: Record<Section, string> = {
-  Blogs: "Expert perspectives on website design, SEO, AEO, conversion and digital strategy for founders and growing businesses.",
-  Guides: "Step-by-step guides to building websites that rank in search, answer customer questions and generate qualified enquiries.",
-  "Case Studies": "Website, SEO and AEO transformation blueprints showing how strategy, structure, content and conversion journeys work together.",
-  Resources: "Practical website briefs, SEO migration checklists, launch tools and conversion audits for a stronger digital presence.",
+  "Website Development": "Detailed guidance for planning, designing and building fast, credible websites that turn qualified visits into enquiries.",
+  "SEO & AEO": "Search and answer-engine strategies that make your expertise easier to discover, understand, verify and cite.",
+  "Content & Social Media": "Practical systems for creating distinctive expert content and extending it across useful social formats.",
+  "Marketing Strategy": "Clear frameworks for positioning, campaigns, measurement and focused growth without wasted activity.",
 };
 
 const sectionKeywords: Record<Section, string[]> = {
-  Blogs: ["website development blog", "SEO insights", "AEO insights", "website conversion strategy"],
-  Guides: ["website development guides", "SEO guides", "AEO guides", "website planning"],
-  "Case Studies": ["website case studies", "SEO case studies", "AEO strategy", "website redesign"],
-  Resources: ["website resources", "SEO checklist", "website brief template", "conversion audit"],
+  "Website Development": ["website development", "website design", "conversion strategy", "website planning"],
+  "SEO & AEO": ["SEO", "AEO", "answer engine optimization", "search strategy"],
+  "Content & Social Media": ["content strategy", "social media strategy", "founder content", "content systems"],
+  "Marketing Strategy": ["marketing strategy", "brand positioning", "campaign planning", "marketing growth"],
 };
 
 type Props = { params: Promise<{ section: string }> };
