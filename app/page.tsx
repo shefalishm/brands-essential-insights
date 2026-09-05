@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <section className="hero home-panel">
+      <section className="hero">
         <div className="shell hero-grid">
           <div>
             <p className="kicker">Websites and marketing built to perform</p>
@@ -46,8 +46,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="shell manifesto home-panel"><div><p className="kicker">Our point of view</p><blockquote>Marketing should feel <em>clearer</em>, not more complicated.</blockquote><p>We turn experience and emerging technology into practical systems that teams can actually use.</p></div></section>
-      <section className="contact-panel home-panel"><div className="shell contact-panel-inner"><p className="section-label">Ready to grow?</p><h2>Build a website and marketing system that earns attention, trust and enquiries.</h2><a className="button button-light" href={`${site.wixUrl}/contact`}>Contact us <span aria-hidden="true">↗</span></a></div></section>
+      <section className="contact-panel"><div className="shell contact-panel-inner"><p className="section-label">Ready to grow?</p><h2>Build a website and marketing system that earns attention, trust and enquiries.</h2><a className="button button-light" href={`${site.wixUrl}/contact`}>Contact us <span aria-hidden="true">↗</span></a></div></section>
     </>
   );
 }
