@@ -99,12 +99,12 @@ nav a:hover, .footer-links a:hover { opacity:.5; }
 .quick-read summary span { color:#7b8493; }
 .quick-read details[open] summary span { transform:rotate(45deg); }
 .quick-read details p { margin:18px 45px 0 0; font-size:14px; line-height:1.7; }
-.prose-wrap { display:grid; grid-template-columns:minmax(0,860px); justify-content:start; gap:45px; padding:95px 0 110px; text-align:left; }
+.prose-wrap { display:grid; grid-template-columns:minmax(0,1fr); width:min(1440px,calc(100% - 80px)); justify-content:stretch; gap:45px; padding:95px 0 110px; text-align:left; }
 .prose-wrap aside { font-size:11px; line-height:1.6; text-transform:uppercase; letter-spacing:.1em; }
 .prose-wrap aside { display:grid; grid-template-columns:220px 1fr auto; gap:30px; align-items:start; padding-bottom:30px; border-bottom:1px solid var(--line); }
 .prose-wrap aside p { margin:0; text-transform:none; letter-spacing:0; opacity:.7; }
 .prose-wrap aside a { border-bottom:1px solid; }
-.prose { font:400 18px/1.8 Montserrat,sans-serif; }
+.prose { width:100%; font:400 18px/1.8 Montserrat,sans-serif; }
 .prose h2 { margin:70px 0 20px; font:400 45px/1.05 Questrial,sans-serif; letter-spacing:-.03em; color:var(--black); }
 .prose h2:first-child { margin-top:0; }
 .prose h3 { margin:45px 0 15px; font:400 28px Questrial,sans-serif; }
