@@ -50,7 +50,6 @@ nav a:hover, .footer-links a:hover { opacity:.5; }
 .card-art[data-section="Guides"] { background:#c98c5b; }
 .card-art[data-section="Case Studies"] { background:#657085; }
 .card-art[data-section="Resources"] { color:var(--ink); background:var(--yellow); }
-.card-art > span:not(.card-art-shade) { position:relative; z-index:2; font-size:11px; text-transform:uppercase; letter-spacing:.14em; }
 .card-copy { padding:34px 0 12px; }
 .article-card-featured .card-copy { padding:55px; color:white; background:var(--black); display:flex; flex-direction:column; justify-content:center; }
 .meta { display:flex; justify-content:space-between; gap:15px; margin-bottom:30px; font-size:10px; text-transform:uppercase; letter-spacing:.12em; opacity:.65; }
