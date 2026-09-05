@@ -13,6 +13,9 @@ export type Article = {
   readingTime: string;
   featured?: boolean;
   eyebrow?: string;
+  image: string;
+  imageAlt: string;
+  faqs?: { question: string; answer: string }[];
   body: string;
 };
 
