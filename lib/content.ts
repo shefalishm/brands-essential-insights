@@ -13,6 +13,8 @@ export type Article = {
   date: string;
   readingTime: string;
   featured?: boolean;
+  standalone?: boolean;
+  keywords?: string[];
   eyebrow?: string;
   image: string;
   imageAlt: string;

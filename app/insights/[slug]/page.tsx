@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article.title,
     description: article.description,
-    keywords: [article.title, article.section, "website development", "SEO", "AEO", "Brands Essential"],
+    keywords: article.keywords ?? [article.title, article.section, "website development", "SEO", "AEO", "Brands Essential"],
     authors: [{ name: "Brands Essential", url: site.wixUrl }],
     alternates: { canonical: `/insights/${article.slug}` },
     openGraph: { type: "article", title: article.title, description: article.description, publishedTime: article.date, url: `/insights/${article.slug}`, images: [{ url: article.image, alt: article.imageAlt }] },
