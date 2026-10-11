@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
+import { AnalyticsConsent } from "@/components/AnalyticsConsent";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
@@ -54,5 +56,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#121f36" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><Header /><main>{children}</main><Footer /></body></html>;
+  return <html lang="en"><body><Header /><main>{children}</main><Footer /><Suspense fallback={null}><AnalyticsConsent /></Suspense></body></html>;
 }
