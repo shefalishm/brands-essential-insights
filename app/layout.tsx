@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   creator: "Brands Essential",
   publisher: "Brands Essential",
   category: "Website development and digital marketing",
+  verification: {
+    other: { "msvalidate.01": "9E45D4FDF615B5B599E71FDBF90B840E" },
+  },
   keywords: [
     "website development",
     "website design",
