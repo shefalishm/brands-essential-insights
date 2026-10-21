@@ -11,6 +11,7 @@ export type Article = {
   description: string;
   section: Section;
   date: string;
+  updated?: string;
   readingTime: string;
   featured?: boolean;
   standalone?: boolean;

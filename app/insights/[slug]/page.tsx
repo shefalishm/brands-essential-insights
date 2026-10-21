@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: article.keywords ?? [article.title, article.section, "website development", "SEO", "AEO", "Brands Essential"],
     authors: [{ name: "Brands Essential", url: site.wixUrl }],
     alternates: { canonical: `/insights/${article.slug}` },
-    openGraph: { type: "article", title: article.title, description: article.description, publishedTime: article.date, url: `/insights/${article.slug}`, images: [{ url: article.image, alt: article.imageAlt }] },
+    openGraph: { type: "article", title: article.title, description: article.description, publishedTime: article.date, modifiedTime: article.updated ?? article.date, url: `/insights/${article.slug}`, images: [{ url: article.image, alt: article.imageAlt }] },
     twitter: { card: "summary_large_image", title: article.title, description: article.description, images: [article.image] },
   };
 }
@@ -31,14 +31,14 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
   const related = getAllArticles().filter(({ slug, section }) => slug !== article.slug && section === article.section).slice(0, 3);
   const graph: Record<string, unknown>[] = [
-    { "@type": "Article", headline: article.title, description: article.description, image: `${site.url}${article.image}`, datePublished: article.date, dateModified: article.date, mainEntityOfPage: `${site.url}/insights/${article.slug}`, articleSection: article.section, author: { "@type": "Organization", name: "Brands Essential", url: site.wixUrl }, publisher: { "@type": "Organization", name: "Brands Essential", url: site.wixUrl } },
+    { "@type": "Article", headline: article.title, description: article.description, image: `${site.url}${article.image}`, datePublished: article.date, dateModified: article.updated ?? article.date, mainEntityOfPage: `${site.url}/insights/${article.slug}`, articleSection: article.section, author: { "@type": "Organization", name: "Brands Essential", url: site.wixUrl }, publisher: { "@type": "Organization", name: "Brands Essential", url: site.wixUrl } },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Insights", item: site.url }, { "@type": "ListItem", position: 2, name: article.section, item: `${site.url}/${sectionSlug(article.section)}` }, { "@type": "ListItem", position: 3, name: article.title, item: `${site.url}/insights/${article.slug}` }] },
   ];
   if (article.faqs?.length) graph.push({ "@type": "FAQPage", mainEntity: article.faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) });
   const jsonLd = { "@context": "https://schema.org", "@graph": graph };
   return <article>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-    <header className="article-hero"><div className="shell article-hero-inner"><Link href={`/${sectionSlug(article.section)}`}>{article.section}</Link><h1>{article.title}</h1><p>{article.description}</p><div className="article-meta"><time dateTime={article.date}>{new Intl.DateTimeFormat("en", { month: "long", day: "numeric", year: "numeric" }).format(new Date(article.date))}</time><span>{article.readingTime}</span></div></div></header>
+    <header className="article-hero"><div className="shell article-hero-inner"><Link href={`/${sectionSlug(article.section)}`}>{article.section}</Link><h1>{article.title}</h1><p>{article.description}</p><div className="article-meta"><time dateTime={article.date}>{new Intl.DateTimeFormat("en", { month: "long", day: "numeric", year: "numeric" }).format(new Date(article.date))}</time>{article.updated ? <span>Updated <time dateTime={article.updated}>{new Intl.DateTimeFormat("en", { month: "long", day: "numeric", year: "numeric" }).format(new Date(article.updated))}</time></span> : null}<span>{article.readingTime}</span></div></div></header>
     <div className="article-band"><span>Brands Essential / Practical insight</span></div>
     {article.faqs?.length ? <section className="shell quick-read"><div><p className="section-label">The quick read</p><h2>Start with the essential answers.</h2></div><div className="quick-read-grid">{article.faqs.slice(0, 3).map(({ question, answer }) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section> : null}
     <div className="shell article-image"><Image src={article.image} alt={article.imageAlt} fill priority sizes="(max-width: 1280px) 100vw, 1280px" /></div>
