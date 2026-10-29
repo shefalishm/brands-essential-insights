@@ -5,6 +5,7 @@ import { getArticlesBySection } from "@/lib/content";
 import { sections, sectionSlug, type Section } from "@/lib/site";
 
 const descriptions: Record<Section, string> = {
+  "Marketing Tools & Tips": "Research-led software comparisons and practical workflow tips for small marketing teams, covering AI and conventional tools.",
   "Website Development": "Detailed guidance for planning, designing and building fast, credible websites that turn qualified visits into enquiries.",
   "SEO & AEO": "Search and answer-engine strategies that make your expertise easier to discover, understand, verify and cite.",
   "Content & Social Media": "Practical systems for creating distinctive expert content and extending it across useful social formats.",
@@ -12,6 +13,7 @@ const descriptions: Record<Section, string> = {
 };
 
 const sectionKeywords: Record<Section, string[]> = {
+  "Marketing Tools & Tips": ["marketing tools", "software comparisons", "marketing workflows", "AI tools"],
   "Website Development": ["website development", "website design", "conversion strategy", "website planning"],
   "SEO & AEO": ["SEO", "AEO", "answer engine optimization", "search strategy"],
   "Content & Social Media": ["content strategy", "social media strategy", "founder content", "content systems"],
@@ -22,7 +24,7 @@ type Props = { params: Promise<{ section: string }> };
 
 function findSection(slug: string) { return sections.find((section) => sectionSlug(section) === slug); }
 
-export function generateStaticParams() { return sections.map((section) => ({ section: sectionSlug(section) })); }
+export function generateStaticParams() { return sections.filter((section) => section !== "Marketing Tools & Tips").map((section) => ({ section: sectionSlug(section) })); }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const section = findSection((await params).section);

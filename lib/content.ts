@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { cache } from "react";
 import type { Section } from "@/lib/site";
+import type { ToolCategorySlug } from "@/lib/marketing-tools";
 import { getEditorialExpansion } from "@/lib/editorial-depth";
 
 export type Article = {
@@ -12,6 +13,7 @@ export type Article = {
   section: Section;
   date: string;
   updated?: string;
+  toolCategory?: ToolCategorySlug;
   readingTime: string;
   featured?: boolean;
   standalone?: boolean;

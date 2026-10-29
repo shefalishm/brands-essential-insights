@@ -71,6 +71,7 @@ An internal team can make significant progress when the offer is stable, evidenc
 ];
 
 const categoryNotes: Record<Article["section"], string> = {
+  "Marketing Tools & Tips": "Choose tools around the workflow, budget, evidence and people responsible for operating them. Verify plan limits and trial the actual task before committing.",
   "Website Development": "For website development, translate these principles into page templates, component rules, content ownership, performance budgets, acceptance criteria and a migration plan. Design and engineering should work from the same audience journey so visual quality, technical quality and commercial clarity reinforce one another.",
   "SEO & AEO": "For SEO and AEO, prioritise indexable answers, clean topic relationships, original expertise and claims that can be verified. Technical foundations create access; strong information creates relevance; evidence creates confidence. Treat rankings and citations as routes to a useful business outcome, not isolated trophies.",
   "Content & Social Media": "For content and social media, protect the distinctive source idea. Capture real experience, adapt it to each channel and return the audience to a useful owned destination. Sustainable cadence follows a reliable extraction and approval system, not pressure to publish for its own sake.",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Article } from "@/lib/content";
+import { findToolCategory } from "@/lib/marketing-tools";
 
 export function ArticleCard({ article, featured = false }: { article: Article; featured?: boolean }) {
   return (
@@ -11,7 +12,7 @@ export function ArticleCard({ article, featured = false }: { article: Article; f
           <span className="card-art-shade" />
         </div>
         <div className="card-copy">
-          <div className="meta"><span>{article.section}</span><span>{article.readingTime}</span></div>
+          <div className="meta"><span>{article.toolCategory ? findToolCategory(article.toolCategory)?.name : article.section}</span><span>{article.readingTime}</span></div>
           <h3>{article.title}</h3>
           <p>{article.description}</p>
           <span className="read-more">Read insight <span aria-hidden="true">↗</span></span>

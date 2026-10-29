@@ -7,7 +7,7 @@ export const site = {
   email: "varsha@brands-essential.com",
 };
 
-export const sections = ["Website Development", "SEO & AEO", "Content & Social Media", "Marketing Strategy"] as const;
+export const sections = ["Website Development", "SEO & AEO", "Content & Social Media", "Marketing Strategy", "Marketing Tools & Tips"] as const;
 export type Section = (typeof sections)[number];
 
-export const sectionSlug = (section: Section) => section.toLowerCase().replaceAll(" & ", "-").replaceAll(" ", "-");
+export const sectionSlug = (section: Section) => section === "Marketing Tools & Tips" ? "marketing-tools" : section.toLowerCase().replaceAll(" & ", "-").replaceAll(" ", "-");

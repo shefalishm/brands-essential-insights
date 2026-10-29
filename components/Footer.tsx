@@ -11,6 +11,7 @@ export function Footer() {
           <a href={site.wixUrl}>Home</a>
           <a href={`${site.wixUrl}/solutions`}>Solutions</a>
           <Link href="/">Insights</Link>
+          <Link href="/marketing-tools">Tools &amp; Tips</Link>
           <a href={`${site.wixUrl}/contact`}>Contact</a>
           <a href={`${site.wixUrl}/privacy-policy`}>Privacy</a>
         </div>

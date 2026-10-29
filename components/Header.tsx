@@ -25,6 +25,7 @@ export function Header() {
           <Link href="/seo-aeo">SEO &amp; AEO</Link>
           <Link href="/content-social-media">Content &amp; Social Media</Link>
           <Link href="/marketing-strategy">Marketing Strategy</Link>
+          <Link href="/marketing-tools">Tools &amp; Tips</Link>
         </nav>
       </div>
     </header>
