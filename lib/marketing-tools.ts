@@ -1,6 +1,19 @@
-export const toolsReviewed = "2026-10-30";
+export const toolsReviewed = "2026-11-02";
 
 export const toolCategories = [
+  {
+    slug: "website-builders",
+    reviewedOn: "2026-11-02",
+    name: "Website Builders & CMS",
+    description: "Compare website platforms around your service pages, publishing responsibilities, total cost and owner handover.",
+    article: "wix-vs-squarespace-small-business",
+    tools: [
+      { name: "Wix", url: "https://www.wix.com/plans", summary: "Website plans with plan-specific business, payment and scheduling features.", check: "Confirm the editor, required services, billing location and full renewal cost." },
+      { name: "Squarespace", url: "https://www.squarespace.com/pricing", summary: "Website plans with design, publishing and plan-specific business features.", check: "Separate the website subscription from scheduling and other subscriptions." },
+      { name: "Webflow", url: "https://webflow.com/pricing", summary: "Website and CMS options with separate Site and Workspace considerations.", check: "Confirm CMS needs, account responsibilities and code-export limitations." },
+    ],
+    tips: ["Compare the same brief and representative content.", "Ask the intended owner to demonstrate an ordinary edit.", "Price the complete setup and ongoing responsibilities."],
+  },
   {
     slug: "video-creation",
     reviewedOn: "2026-10-29",
@@ -42,7 +55,7 @@ export const toolCategories = [
   },
   {
     slug: "email-campaigns",
-    reviewedOn: "2026-10-29",
+    reviewedOn: "2026-11-02",
     name: "Email & Campaigns",
     description: "Compare audience management, newsletters and campaign automation without ignoring consent or operating costs.",
     article: "mailchimp-vs-brevo-vs-kit",
@@ -50,6 +63,7 @@ export const toolCategories = [
       { name: "Mailchimp", url: "https://mailchimp.com/pricing/marketing/", summary: "Email campaigns, audience tools and marketing automation.", check: "Review contact counts, send allowances, plan features and overages." },
       { name: "Brevo", url: "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans", summary: "Email and multichannel marketing options across plans.", check: "Check email volume, contact storage and any channel add-ons." },
       { name: "Kit", url: "https://kit.com/pricing", summary: "Creator email, forms, tagging and automation options.", check: "Check subscriber tiers, sequence access and commerce terms." },
+      { name: "MailerLite", url: "https://www.mailerlite.com/pricing", summary: "Email campaigns, signup forms and plan-specific automation and sending allowances.", check: "Check active-subscriber counting, the billing cycle and required sending volume." },
     ],
     tips: ["Choose one useful audience promise before building a sequence.", "Test signup, suppression and unsubscribe behaviour.", "Separate message delivery from commercial outcomes."],
   },
