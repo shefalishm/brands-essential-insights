@@ -1,0 +1,145 @@
+---
+title: "How to Get Your Website Indexed by Google: A Search Console Guide"
+description: "Use Google Search Console to diagnose missing pages, check crawling and canonicals, submit sitemaps and verify fixes on the correct property."
+section: "SEO & AEO"
+date: "2026-11-04"
+standalone: true
+eyebrow: "Find what Google can access and what needs fixing before requesting indexing."
+image: "/images/articles/how-to-get-website-indexed-by-google.webp"
+imageAlt: "Publisher inspecting a webpage on a tablet in a bright library"
+keywords: ["how to get website indexed by Google", "Google Search Console URL Inspection", "request indexing", "website indexing troubleshooting"]
+faqs:
+  - question: "How do I get a new page indexed by Google?"
+    answer: "Publish the intended public URL, link to it from relevant pages, include it in the sitemap and inspect it in Search Console. Use Request Indexing for a few important URLs when appropriate."
+  - question: "Why does Search Console say URL not in property?"
+    answer: "The inspected URL falls outside the selected property. Choose a verified property that covers the exact host and protocol or use a verified Domain property that includes them."
+  - question: "Does submitting a sitemap guarantee indexing?"
+    answer: "Google treats a sitemap as a discovery hint. The page still needs to meet technical requirements, and Google decides whether to index it."
+  - question: "What is the difference between Test Live URL and the indexed report?"
+    answer: "The live test checks what Google can access at test time. The indexed report describes what Google knows from its previous processing."
+  - question: "Should I request indexing every day?"
+    answer: "Google says repeated requests for the same URL do not make it crawl faster. Fix the relevant issue and review its status after Google has had time to reprocess it."
+  - question: "How do I investigate a Google-selected canonical I did not expect?"
+    answer: "Compare the intended URL and selected URL. Check redirects, canonical tags, internal links and sitemap entries for conflicting signals, then decide which URL the site should consistently promote."
+---
+
+## Use one real URL to diagnose the issue
+
+Start with the exact public address you want Google to index. Open it in Search Console's URL Inspection tool under the matching verified property. Read the reported status, run a live test when you need to verify a recent fix and record the expected canonical URL. If the page is eligible and worth submitting, request indexing or use a sitemap for a set of pages. Google decides when to crawl and whether to index an eligible page. [Google's recrawl and indexing guidance](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)
+
+Pick one important page first. If a whole template is affected, the individual URL gives you something concrete to check before you update every page. Record the publication date, last deployment affecting the page, site section and the search status you expect.
+
+## Select the correct property
+
+Check the protocol and host in the address bar. For example, a URL-prefix property for the main website does not cover a separately hosted subdomain unless that subdomain belongs to the prefix. A verified Domain property can include subdomains and protocols. Alternatively, select the verified URL-prefix property for the exact site you need. [Search Console property types](https://support.google.com/webmasters/answer/34592)
+
+A business might have a main domain, an insights subdomain and a platform-generated preview domain. Decide which host is public and canonical before submitting URLs. Keep previews and staging environments separate in your working list. Share the exact public URL with anyone reviewing the issue so they can reproduce it.
+
+### Start a simple inspection log
+
+Record the submitted URL, selected property, report time, page status, live test result, declared canonical and Google-selected canonical when available. Add one column for the proposed fix and another for the result of the next check. This makes it easier to tell when several URLs share the same underlying cause.
+
+If a client reports that a page is missing from a particular query, also record the query and what the client expected. A missing search appearance and an indexing issue can require different work. Inspect the URL first and then use search reporting to understand visibility where data is available.
+
+## Confirm the live URL behaves as intended
+
+Open the URL in a private browser window and follow it to the final address. Confirm visitors can see the main content without logging in, and verify the public page returns a successful response. Ask a developer to check the HTTP status when a page looks normal but the inspection report reports an error. Look for a wrong host, a redirect chain or an error page served at the URL.
+
+Compare the URL with the version linked from the site. Protocol, case, trailing slash and path can differ across platforms. A redirect may be correct if it consistently sends people to the intended URL. Include that destination in your inspection log. The important question is which version should exist as the page Google can index.
+
+### Check robots.txt, noindex and canonical signals separately
+
+Robots.txt controls crawler access. A noindex directive requests exclusion after the crawler can read it. A canonical tag indicates a preferred version among duplicate or similar URLs. Google explains these controls separately and can select a canonical URL different from the one you declare. [Robots.txt guide](https://developers.google.com/search/docs/crawling-indexing/robots/intro), [noindex guidance](https://developers.google.com/search/docs/crawling-indexing/block-indexing) and [canonicalization guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
+
+A common launch investigation is a public page retaining a setting intended for previews. Ask the developer to check HTML metadata, applicable response headers and crawl rules on the production host. Remove a directive only where it conflicts with the public indexing plan. Preserve restrictions on pages the business intends to keep private or exclude.
+
+## Read the indexed report and live test for what each tells you
+
+The indexed report reflects Google's stored information. The live test checks current access and aspects of current eligibility. If a recent deployment corrected a blocking directive, these views can differ until processing catches up. Write down both results and the time they were observed. [Google's URL Inspection documentation](https://support.google.com/webmasters/answer/9012289)
+
+Review the actual page Google can fetch. Look for the intended article, service text or product details. If a script fails and the meaningful content disappears, investigate the rendered result with the developer. For a moved page, inspect the intended final URL after confirming the previous URL redirects correctly.
+
+### Match the next action to the status
+
+- **URL outside the property.** Switch to the property covering the inspected address and check that you have the required permissions.
+- **Blocked or excluded intentionally.** Keep the exclusion if it reflects the publication plan. Investigate conflicting links or sitemap entries if the site continues promoting the excluded page.
+- **Excluded after an unintended launch setting.** Correct the public setting, recheck the live URL and record when it changed.
+- **Alternate page or a different canonical.** Review which version should be canonical and align the signals around that version.
+- **Discovered or crawled but currently unindexed.** Confirm accessibility, internal links, canonical and content purpose. Use the current report to determine which issues are supported by evidence.
+- **Indexed.** Review whether the page appears for relevant queries and whether its offer is clear. Check impressions and clicks where available.
+
+## Give the page a place on the website
+
+Add a relevant link from a page customers already use. A service page can sit in the services navigation or be linked from a directly related guide. A new article can be linked from its topic category. Keep link text descriptive enough that a reader understands where they will go. [Google Search Essentials](https://developers.google.com/search/docs/essentials)
+
+Review orphaned pages during a publishing or migration project. A sitemap can list a page that visitors have no way to discover through the website. Decide where the page belongs and whether another page serves the same purpose. Merge overlapping material when a single page can give a better answer.
+
+### Check the sitemap against the intended public URLs
+
+Open the public sitemap and find the exact canonical address. Check for a successful response, suitable sitemap format and the correct property when submitting it. Audit removed URLs, redirects and previews when you see problems across a template. Google describes sitemap submission as a hint. [Google's sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+
+For an editorial site with several new pages, use the sitemap to confirm the expected publication set. Inspect a representative article and any page that has a business priority or behaves differently. For a redesign, also review the [SEO-safe migration guide](/insights/seo-website-migration-checklist) before treating redirects and indexing as separate incidents.
+
+## Request indexing and plan the follow-up
+
+Use Request Indexing for a small number of important URLs after verifying the live page. Google says repeated requests for the same URL do not make it crawl faster. For a larger set, use an accurate sitemap and relevant internal links. Save the date and the reason for any request. [Google's indexing request guidance](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)
+
+Review the indexed report later and compare it with the original observation. If the same issue persists after a fix, check whether the intended production deployment is live, whether the public address remained the same and whether the report reflects a new crawl. If you see a new status, investigate the new evidence before changing additional settings.
+
+### Know when to bring in a web team
+
+Escalate when the issue affects multiple page types, redirects are inconsistent, the wrong host keeps appearing as canonical or essential content is unavailable in the live test. Provide a small set of representative URLs and the inspection log. The team can use that evidence to find a shared template or hosting issue without changing unrelated settings.
+
+## Three worked diagnoses you can repeat
+
+### An article appears in the sitemap but Inspection shows a different canonical
+
+Start with the intended article URL and the alternate address reported by Google. Open each and record the final response. Then ask the web team to compare canonical tags, sitemap entries and links on the homepage and category pages. If both addresses return the same article and the site alternates between them, pick the intended canonical and use it consistently across signals the site controls.
+
+For example, a publishing system may expose an article at an old category URL and a new category URL while the navigation links to the old one. Decide whether the old address should redirect, whether both versions have a legitimate purpose and which one should be included in the sitemap. Review whether internal links and any redirects point to the chosen version.
+
+Test the intended address live after the change. Save the evidence that the live site now declares and links to the right URL. Use a later indexed report to see what Google selected after reprocessing. Keep those two observations separate in the log. A public code change is an implementation result. The report gives a separate observation of Google's processing.
+
+### A new subdomain is public, but the tool rejects every URL
+
+Copy the address from the public page rather than an earlier email or an environment settings page. Compare its host with the current Search Console property selector. If the business uses a URL-prefix property for the main website, choose the verified subdomain property or the verified Domain property. Ask the account owner for the appropriate access if the property is missing.
+
+Test a single known public URL once you are in the correct property. If it is accepted, review the inspection status and sitemap under that property. If it is still rejected, compare protocol, hostname and any specified path prefix. Check for a preview host or a redirect to a different site. Record the property and destination in the issue so another reviewer can reproduce it.
+
+If the team has to verify a property, follow the verification method available to the person responsible. Agree who owns the account and how site access will be maintained when a supplier leaves. A publishing handover should include the name of the property and where the team can check future URLs. This keeps later diagnosis simple even if the website moves.
+
+### Several service pages remain unindexed after a redesign
+
+Pick examples from both affected and unaffected sections. Compare their published response, internal links, canonical declarations, sitemap inclusion and main content. If every affected page uses the same template, ask the developer to inspect that template and the route that renders it. A single template change may explain several observations. Document which pages show the same condition before choosing a fix.
+
+If two pages answer the same buyer question, review their intended roles before asking for repeated crawls. An old service page may still have useful links while its replacement contains the current offer. Decide where the complete answer should live and whether the previous URL should redirect. Ask the business owner to confirm that the destination serves the same customer need.
+
+Make the smallest correction supported by the evidence and recheck representative pages. Update the sitemap and site links if the intended public address changed. Keep a record of what the release changed and what the subsequent report shows. Escalate only when the evidence points to a shared issue or the affected pages carry an important business responsibility.
+
+## Prepare a handover a site owner can use
+
+The person publishing the page should know the public URL, the property and where the article is linked from. The person maintaining the site should know which production settings determine redirects and indexing directives. Give each person a simple shared record containing the intended page, what they checked and when the next review should occur.
+
+Write acceptance criteria for the launch itself. The intended page opens without a sign-in, returns the expected response and displays the correct main content. The site's navigation or editorial links provide a path to it. The sitemap lists the intended URL, and any earlier address reaches its approved destination. Confirm the technical observations at publication and record indexing separately when you have Search Console evidence.
+
+Avoid using an open-ended number of checks for a small team. Choose representative URLs when the same template supports several pages. Add an exception for important pages that have distinct requirements, such as a location page that recently moved or a service landing page with a different host. The point is to make future investigations faster without asking staff to inspect every address on every release.
+
+### Turn a status change into a useful report
+
+Write the observed change, its date and what action it supports. An example could say that the live test now shows a successful fetch after an unintended restriction was removed, while the stored report still reflects the previous state. Keep the record factual and revisit it after the report changes. This gives the business a better basis for deciding whether more work is needed.
+
+Once the page is indexed, review the questions it serves. Search Console can help identify the searches with which the page is associated when data is available. The owner can also look at whether visitors find the right service and contact path. Treat low visibility and low enquiry quality as separate investigations so the next improvement addresses the actual problem.
+
+## Create an evidence packet for a shared indexing problem
+
+Choose a few affected examples and one comparable page that behaves as expected. For each, save the exact public URL and the date of the latest relevant deployment. Capture the current inspection result and the outcome of a live test if one is appropriate. Add the sitemap address, the declared canonical and the site page that links to it. You can keep screenshots in the team's normal issue tracker with access limited to the people working on the site.
+
+Write the symptoms in observable terms. For example, the public page may open on a phone while the indexed report names a different canonical. Or a developer may find that only a particular template has an unintended exclusion directive. Describe each observation separately and mark any unconfirmed explanation as a hypothesis. The person making the fix should be able to verify it with the same examples.
+
+Ask the developer to check the response from the actual production address before editing settings. A preview could have a different directive, a separate hostname or restricted access. If the problem appears only on production, compare the relevant environment settings and deployment output. Review the rendered result on a representative page after the change. Retest the comparison page so you can spot whether the change affected a route that was working.
+
+Finally, agree on who will revisit Search Console. Put the date, page and expected report change in the evidence packet. Save the later observation when it becomes available. The team can then distinguish a deployed correction from Google's subsequent processing and decide whether further investigation is warranted.
+
+If several people publish content, add a short version of this checklist to their handover. Include the correct Search Console property and one known public example. Showing them how to inspect that example is often enough to prevent repeated investigations of the wrong host.
+
+If your important service pages or recent articles are missing, bring the exact URLs and current Search Console observations to a [website and SEO review with Brands Essential](https://www.brands-essential.com/contact). The first deliverable should identify the affected URLs, the evidence for each issue and how to verify the correction.
