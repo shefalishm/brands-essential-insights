@@ -1,0 +1,82 @@
+---
+title: "Website Accessibility Checklist for Small Businesses"
+description: "Check keyboard navigation, focus, contrast, zoom, forms and media on the pages customers use to contact, book or buy."
+section: "Website Development"
+date: "2026-11-10"
+standalone: true
+image: "/images/articles/website-accessibility-checklist.webp"
+imageAlt: "Designer using a keyboard to review a website in a lilac studio"
+faqs:
+  - question: "Where should a small business start with website accessibility?"
+    answer: "Start with the pages and flows customers rely on. Test the navigation, contact form, booking or checkout, and record the exact steps to reproduce barriers."
+  - question: "Can an automated scan replace a manual review?"
+    answer: "Automated scans help flag some issues. Manual checks and testing with people who use assistive technology are needed to understand complete journeys."
+  - question: "What should I check with the keyboard?"
+    answer: "Use Tab and Shift+Tab to move through the page. Check that focus is visible and that menus, dialogs and forms can be operated in a sensible order."
+  - question: "What makes good alternative text?"
+    answer: "Describe the information or purpose of an informative image in context. Decorative images should be handled so they do not add unnecessary screen-reader announcements."
+  - question: "How can I check that a form is usable?"
+    answer: "Identify each field by its label, enter test data and trigger a controlled error. Check that the error identifies the field and that you can correct and submit it."
+  - question: "Does this checklist establish WCAG conformance?"
+    answer: "It is a preliminary review. A conformance evaluation needs a defined scope and a systematic assessment against the relevant criteria."
+---
+
+## Start with a customer task
+
+A website accessibility checklist is most useful when it follows a real journey. Pick a visitor who needs to find an offer, confirm a detail and complete an action. Include the mobile menu, the page content and the final form or booking screen. Test representative pages and record the browser, device, steps and observed barrier. [W3C WAI Easy Checks](https://www.w3.org/WAI/test-evaluate/preliminary/)
+
+A small repair business might test finding its opening hours and requesting an appointment. A shop might test choosing a variant and going through checkout with supported test facilities. Include third-party screens if customers must use them. Give each problem an owner who can correct the component or contact the relevant supplier.
+
+## Check keyboard navigation and visible focus
+
+Start at the top of the page and use Tab to move forward. Use Shift+Tab to move back. Look for a visible focus indicator and a sequence that matches the page's purpose. Open the navigation and use its controls. Try a dialog or a disclosure using the keyboard and check where focus goes when you close it.
+
+Write down the first step a visitor cannot complete. If the mobile menu opens but the next focus move goes behind it, capture the control and the sequence. If a dialog closes and focus lands far from the opening control, describe where you expected it to return. Re-test using the same sequence after the fix.
+
+## Review text, headings and image alternatives
+
+Read the title and headings as an outline. Confirm that the page has a clear subject and that section headings describe the content that follows. Read links out of context and check whether the text gives enough information to choose one. Avoid relying on colour alone to distinguish links or status messages.
+
+For meaningful photographs, write alternative text about the information the image contributes. The same photograph may need different treatment when it illustrates a process or appears as background decoration. For a diagram, provide an equivalent explanation in nearby text where appropriate. Verify that icons used as controls have accessible names. [W3C image guidance](https://www.w3.org/WAI/tutorials/images/)
+
+## Check contrast, zoom and narrow layouts
+
+Measure important text and control states using a contrast checker against the actual background. Text over a photograph may need a solid backdrop or a consistent overlay, especially if the image changes between pages. Review labels, placeholder text, focus outlines and error messages in the state where visitors see them.
+
+Zoom in and inspect the page at a narrow width. Check for clipped labels, content hidden by sticky elements and buttons that overlap. A wide comparison table can use its own scroll area when appropriate. Confirm the rest of the page remains readable and the table can be reached and operated. Review the applicable requirements in the standard when you need a formal evaluation. [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+
+## Test the form with a deliberate error
+
+Use a safe test submission. Start by confirming that you can identify the required fields and understand their expected formats. Trigger a validation error and read the result. Check whether the message identifies the affected field and explains how to correct it. Then verify that the form keeps the information the visitor has already entered where appropriate.
+
+Follow the journey after submission. A clear confirmation tells the customer what happened and what comes next. Check the staff side as well so the business can verify the enquiry arrived. For external booking or payment screens, document which issues the supplier must fix and any accessible alternative the business can provide. [W3C forms guidance](https://www.w3.org/WAI/tutorials/forms/)
+
+## Check media and repeated components
+
+Play a representative video with its captions enabled. Check whether the captions convey the speech and relevant sounds. Review whether a transcript or description is needed to convey important information. Confirm that media controls can be reached and used with the keyboard.
+
+Prioritise shared components such as the navigation, forms and card links. A correction to a repeated component can address multiple pages. After it is fixed, test examples using different headings, long labels and mobile widths. Include at least one ordinary page that did not originally show the problem so you can check for unintended changes.
+
+## Turn the findings into an actionable backlog
+
+For each barrier, record the URL, user task, reproduction steps, observed result, expected result and owner. Give blocked journeys priority, especially where a customer cannot enquire, book or buy. Pair automated checks with manual tests, and include users of assistive technology when the scope and resources allow. Save evidence of the corrected behaviour and give editors a short checklist for future releases.
+
+## Rehearse an appointment request from start to finish
+
+Use a hypothetical service business with an opening-hours page, a mobile menu and a scheduler. Start on the homepage, open the menu using the keyboard and find the service. Then locate the booking link and follow it to the scheduler. At each step, record the control you used and the destination you expected. Watch for focus moving off screen or remaining behind an overlay.
+
+At the scheduler, choose a test date through the approved route. Check whether available and unavailable dates can be distinguished without relying only on colour. Try changing your selection. Read any confirmation or error in order and check whether the next action is obvious. Repeat at a narrow viewport with larger text. If the journey requires a third-party tool, note which site owns each step and route the issue to the right supplier.
+
+### Make a ticket someone else can reproduce
+
+Use a short title that describes the effect. For example, “Keyboard focus moves behind the menu after opening it” names the barrier more clearly than “Accessibility issue on mobile.” Record the page, browser and input method. Include the precise steps, the current result and the result that would let the customer continue. Add a short screenshot or recording when the issue is visual.
+
+After the fix, repeat the original steps and one nearby action. For the menu example, check opening, choosing a link, closing without choosing a link and returning to the trigger. Check a page with a longer menu label. Ask the person doing the review to mark the result and the environment. Reopen the ticket if the same customer journey still fails.
+
+### Make content accessibility part of publishing
+
+Give editors a short review before each release. Ask them to confirm that the title identifies the page, headings describe the sections, meaningful images have useful alternatives and link labels explain where they lead. If a video is included, assign a person to check captions and related text. Add a review of the phone layout when a page includes unusual media or wide content.
+
+For older content, begin with pages customers still visit to get information or take action. Group issues by shared template or component. A repair to the form used across five service pages may be a better first task than editing one isolated page. Keep notes on the scope of the review so the next person understands which journeys have been tested and which still need evaluation.
+
+Bring a representative page and the customer task you need people to complete. Brands Essential can discuss a review and implementation scope around the most important barriers. [Contact Brands Essential](https://www.brands-essential.com/contact)
